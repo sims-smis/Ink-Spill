@@ -11,8 +11,8 @@ export default function DrawingCanvas() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return; // Ensure canvas is not null
-    canvas.width = 500;
-    canvas.height = 500;
+    canvas.width = 600;
+    canvas.height = 600;
 
     const context = canvas.getContext("2d");
     if (!context) return; // Ensure context is not null
@@ -20,7 +20,7 @@ export default function DrawingCanvas() {
     context.strokeStyle = "black";
     context.lineWidth = lineWidth; // Set initial lineWidth
     canvasContextRef.current = context;
-  }, []); // Update effect dependency to include lineWidth
+  }, []);
 
   const startDrawing = ({ nativeEvent }) => {
     if (!canvasContextRef.current) return; // Check if context is available
@@ -88,12 +88,12 @@ export default function DrawingCanvas() {
         Ink-Spill
       </canvas>
       <div>
-        <button onClick={drawNow}>Pencil</button>
-        <button onClick={eraseNow}>Eraser</button>
-        <button onClick={eraseAll}>Erase All</button>
-        <label>
+        <button onClick={drawNow} className=" bg-white w-20 text-black m-4" >Pencil</button>
+        <button onClick={eraseNow} className=" bg-white w-20 text-black m-4">Eraser</button>
+        <button onClick={eraseAll} className=" bg-white w-20 text-black m-4">Erase All</button>
+        <label className=" bg-white text-black m-4 p-0.5">
           Stroke Width:
-          <select value={lineWidth} onChange={handleLineWidthChange}>
+          <select className=" ml-2" value={lineWidth} onChange={handleLineWidthChange}>
             <option value={5}>5px</option>
             <option value={10}>10px</option>
             <option value={15}>15px</option>

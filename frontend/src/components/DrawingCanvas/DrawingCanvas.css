@@ -1,5 +1,7 @@
 .canvas-container{
-    width: 500px;
-    height: 500px;
-    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+    border: 2px solid brown;
+    background-color: rgb(235, 235, 235);
+    /* background-color: white; */
 }
